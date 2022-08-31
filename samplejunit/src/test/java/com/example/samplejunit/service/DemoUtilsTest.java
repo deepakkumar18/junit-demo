@@ -22,11 +22,21 @@ public class DemoUtilsTest {
 	public void init() {
 		demoUtils = new DemoUtils();
 	}
-	
+
 	@Test
 	public void greaterOrNot() {
 		Assertions.assertTrue(demoUtils.greater(20, 10));
 		Assertions.assertFalse(demoUtils.greater(20, 20));
+	}
+
+	@Test	
+	public void sameOrNot() {
+		String s = "deepak";
+		String s1 = s;
+		String s2 = "Kumar";
+
+		Assertions.assertSame(s, s1);
+		Assertions.assertNotSame(s, s2);
 	}
 
 	@Test
