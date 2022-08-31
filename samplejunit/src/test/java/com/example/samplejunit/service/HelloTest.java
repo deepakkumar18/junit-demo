@@ -1,5 +1,6 @@
 package com.example.samplejunit.service;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -40,5 +41,10 @@ public class HelloTest {
 		Assertions.assertNotNull(obj,"Object should not be null");
 		Assertions.assertNull(s1,"Object should be null");
 		
+	}
+	
+	@AfterEach
+	public void tearDown() {
+		System.out.println("Added After Each Annotated method");
 	}
 }
