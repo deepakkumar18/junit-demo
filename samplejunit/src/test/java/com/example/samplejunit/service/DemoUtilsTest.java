@@ -1,5 +1,6 @@
 package com.example.samplejunit.service;
 
+import java.time.Duration;
 import java.util.List;
 
 import org.junit.jupiter.api.Assertions;
@@ -16,9 +17,11 @@ public class DemoUtilsTest {
 
 	private DemoUtils demoUtils;
 
-	@BeforeEach
-	public void init() {
-		demoUtils = new DemoUtils();
+	@Test
+	public void testTimeOut() {
+		Assertions.assertTimeoutPreemptively(Duration.ofSeconds(3), () -> {
+			demoUtils.timeOut();
+		});
 	}
 
 	@Test
@@ -86,6 +89,11 @@ public class DemoUtilsTest {
 		Assertions.assertNotNull(obj, "Object should not be null");
 		Assertions.assertNull(s1, "Object should be null");
 
+	}
+
+	@BeforeEach
+	public void init() {
+		demoUtils = new DemoUtils();
 	}
 
 	/*
