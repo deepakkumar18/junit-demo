@@ -1,9 +1,8 @@
 package com.example.samplejunit.service;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
+import java.util.List;
+
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.DisplayNameGeneration;
@@ -24,12 +23,30 @@ public class DemoUtilsTest {
 	}
 
 	@Test
+	public void linesMatch() {
+		List<String> stringList = List.of("luv", "2", "code");
+		Assertions.assertLinesMatch(stringList, demoUtils.getStringList());
+	}
+
+	@Test
+	public void IterableEquals() {
+		List<String> stringList = List.of("luv", "2", "code");
+		Assertions.assertIterableEquals(stringList, demoUtils.getStringList());
+	}
+
+	@Test
+	public void ArraysEquals() {
+		String[] stringArray = new String[] { "A", "B", "C" };
+		Assertions.assertArrayEquals(stringArray, demoUtils.getAlphabetsArray(), "Arrays should be equal");
+	}
+
+	@Test
 	public void greaterOrNot() {
 		Assertions.assertTrue(demoUtils.greater(20, 10));
 		Assertions.assertFalse(demoUtils.greater(20, 20));
 	}
 
-	@Test	
+	@Test
 	public void sameOrNot() {
 		String s = "deepak";
 		String s1 = s;
@@ -40,7 +57,7 @@ public class DemoUtilsTest {
 	}
 
 	@Test
-	public void test() {
+	public void testAssertEquals() {
 		int result = demoUtils.calculate(2, 3);
 		Assertions.assertEquals(5, result, " 2 + 3 should be 5");
 	}
@@ -52,7 +69,7 @@ public class DemoUtilsTest {
 	}
 
 	@Test
-	@DisplayName("Null Check")
+	// @DisplayName("Null Check")
 	public void testCheckNull() {
 		String s = new String("Deepak");
 		String s1 = null;
