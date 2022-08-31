@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 // @DisplayNameGeneration(DisplayNameGenerator.Simple.class) 
 // this one removes parenthesis
 
-
+@DisplayNameGeneration(DisplayNameGenerator.IndicativeSentences.class)
 public class HelloTest {
 
 	private Hello hello;
