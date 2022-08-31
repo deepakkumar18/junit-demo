@@ -1,6 +1,6 @@
 package com.example.samplejunit.service;
 
-public class Hello {
+public class DemoUtils {
 	public int calculate(int a, int b) {
 		return a + b;
 	}

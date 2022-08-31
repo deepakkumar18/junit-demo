@@ -14,24 +14,24 @@ import org.junit.jupiter.api.Test;
 // this one removes parenthesis
 
 @DisplayNameGeneration(DisplayNameGenerator.IndicativeSentences.class)
-public class HelloTest {
+public class DemoUtilsTest {
 
-	private Hello hello;
+	private DemoUtils demoUtils;
 
 	@BeforeEach
 	public void init() {
-		hello = new Hello();
+		demoUtils = new DemoUtils();
 	}
 
 	@Test
 	public void test() {
-		int result = hello.calculate(2, 3);
+		int result = demoUtils.calculate(2, 3);
 		Assertions.assertEquals(5, result, " 2 + 3 should be 5");
 	}
 
 	@Test
 	public void testTwo() {
-		int result = hello.calculate(2, 3);
+		int result = demoUtils.calculate(2, 3);
 		Assertions.assertNotEquals(7, result, " 2 + 3 should not be 7");
 	}
 
@@ -40,7 +40,7 @@ public class HelloTest {
 	public void testCheckNull() {
 		String s = new String("Deepak");
 		String s1 = null;
-		Object obj = hello.checkNull(s);
+		Object obj = demoUtils.checkNull(s);
 
 		Assertions.assertNotNull(obj, "Object should not be null");
 		Assertions.assertNull(s1, "Object should be null");
