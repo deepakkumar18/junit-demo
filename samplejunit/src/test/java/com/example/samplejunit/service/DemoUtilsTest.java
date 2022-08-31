@@ -22,6 +22,12 @@ public class DemoUtilsTest {
 	public void init() {
 		demoUtils = new DemoUtils();
 	}
+	
+	@Test
+	public void greaterOrNot() {
+		Assertions.assertTrue(demoUtils.greater(20, 10));
+		Assertions.assertFalse(demoUtils.greater(20, 20));
+	}
 
 	@Test
 	public void test() {
