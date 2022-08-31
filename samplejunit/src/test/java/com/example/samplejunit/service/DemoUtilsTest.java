@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.DisplayNameGenerator;
 import org.junit.jupiter.api.Test;
@@ -20,6 +19,15 @@ public class DemoUtilsTest {
 	@BeforeEach
 	public void init() {
 		demoUtils = new DemoUtils();
+	}
+
+	@Test
+	public void testException() {
+		Assertions.assertThrows(Exception.class, () -> {
+			demoUtils.exceptionThrown(-1);
+		});
+
+		Assertions.assertDoesNotThrow(() -> demoUtils.exceptionThrown(1));
 	}
 
 	@Test
