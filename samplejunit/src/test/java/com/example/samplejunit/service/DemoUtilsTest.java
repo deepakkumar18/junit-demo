@@ -7,12 +7,15 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.DisplayNameGenerator;
+import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 
-// @DisplayNameGeneration(DisplayNameGenerator.Simple.class) 
+@DisplayNameGeneration(DisplayNameGenerator.Simple.class) 
 // this one removes parenthesis
 
-@DisplayNameGeneration(DisplayNameGenerator.IndicativeSentences.class)
+//@DisplayNameGeneration(DisplayNameGenerator.IndicativeSentences.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class DemoUtilsTest {
 
 	private DemoUtils demoUtils;
@@ -34,31 +37,31 @@ public class DemoUtilsTest {
 	}
 
 	@Test
-	public void linesMatch() {
+	public void testLinesMatch() {
 		List<String> stringList = List.of("luv", "2", "code");
 		Assertions.assertLinesMatch(stringList, demoUtils.getStringList());
 	}
 
 	@Test
-	public void IterableEquals() {
+	public void testIterableEquals() {
 		List<String> stringList = List.of("luv", "2", "code");
 		Assertions.assertIterableEquals(stringList, demoUtils.getStringList());
 	}
 
 	@Test
-	public void ArraysEquals() {
+	public void testArraysEquals() {
 		String[] stringArray = new String[] { "A", "B", "C" };
 		Assertions.assertArrayEquals(stringArray, demoUtils.getAlphabetsArray(), "Arrays should be equal");
 	}
 
 	@Test
-	public void greaterOrNot() {
+	public void testGreaterOrNot() {
 		Assertions.assertTrue(demoUtils.greater(20, 10));
 		Assertions.assertFalse(demoUtils.greater(20, 20));
 	}
 
 	@Test
-	public void sameOrNot() {
+	public void testSameOrNot() {
 		String s = "deepak";
 		String s1 = s;
 		String s2 = "Kumar";
@@ -74,13 +77,12 @@ public class DemoUtilsTest {
 	}
 
 	@Test
-	public void testTwo() {
+	public void testAssertNotEquals() {
 		int result = demoUtils.calculate(2, 3);
 		Assertions.assertNotEquals(7, result, " 2 + 3 should not be 7");
 	}
 
 	@Test
-	// @DisplayName("Null Check")
 	public void testCheckNull() {
 		String s = new String("Deepak");
 		String s1 = null;
