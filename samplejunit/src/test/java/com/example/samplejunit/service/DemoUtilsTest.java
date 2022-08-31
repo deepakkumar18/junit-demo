@@ -13,7 +13,6 @@ import org.junit.jupiter.api.TestMethodOrder;
 
 @DisplayNameGeneration(DisplayNameGenerator.Simple.class) 
 // this one removes parenthesis
-
 //@DisplayNameGeneration(DisplayNameGenerator.IndicativeSentences.class)
 @TestMethodOrder(MethodOrderer.MethodName.class)
 public class DemoUtilsTest {
@@ -90,6 +89,7 @@ public class DemoUtilsTest {
 
 		Assertions.assertNotNull(obj, "Object should not be null");
 		Assertions.assertNull(s1, "Object should be null");
+		Assertions.assertNull(demoUtils.checkNull(null));
 
 	}
 
