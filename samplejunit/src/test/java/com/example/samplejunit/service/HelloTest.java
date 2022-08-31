@@ -5,7 +5,13 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayNameGeneration;
+import org.junit.jupiter.api.DisplayNameGenerator;
 import org.junit.jupiter.api.Test;
+
+// @DisplayNameGeneration(DisplayNameGenerator.Simple.class) 
+// this one removes parenthesis
+
 
 public class HelloTest {
 
